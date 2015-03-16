@@ -4,10 +4,12 @@ import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.NoSuchElementException;
 
@@ -130,6 +132,61 @@ public class MainView extends Activity {
         // Update the views
         updateLifeTextView(R.id.player1Life);
         updateLifeTextView(R.id.player2Life);
+    }
+
+    /**
+     *  Rolls a 6 sided dice:
+     *  Chooses a random number between 1 and 6
+     *  and displays the result at the center of the screen.
+     */
+    public void rollDiceAndDisplayResult(View view) {
+        Toast diceResult = Toast.makeText(getApplicationContext(),  String.format("You rolled a %d on the dice.", randomNumber(6)), Toast.LENGTH_SHORT);
+        diceResult.setGravity(Gravity.CENTER, 0, 0);
+        diceResult.show();
+    }
+
+    /**
+     *  Flips a coin:
+     *  Chooses either heads or tails and
+     *  displays the result at the center of the screen.
+     *
+     * @param view
+     */
+    public void flipCoinAndDisplayResult(View view) {
+        Toast coinResult = Toast.makeText(getApplicationContext(), String.format("You flipped a %s on the coin.", flipCoin()), Toast.LENGTH_SHORT);
+        coinResult.setGravity(Gravity.CENTER, 0, 0);
+        coinResult.show();
+    }
+
+    /**
+     *  Randomly chooses either heads or tails
+     *  and returns the result as a string.
+     *
+     *  Throws a no such element exception if it is anything else.
+     *
+     * @return string type of heads or tails
+     */
+    private String flipCoin() {
+        switch (randomNumber(2)) {
+            case 1:
+                return "heads";
+            case 2:
+                return "tails";
+            default:
+                throw new NoSuchElementException();
+        }
+    }
+
+    /**
+     *  Produces a random number from 1
+     *  to the maximum number specified.
+     *  The maximum number is inclusive.
+     *
+     * @param max number
+     * @return random number within the range
+     */
+    public int randomNumber(int max) {
+        return (int)(Math.random()*max+1);
     }
 
 }

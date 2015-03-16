@@ -8,7 +8,7 @@
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainView">
 
     <RelativeLayout
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="fill_parent">
 
         <Button
@@ -90,9 +90,33 @@
             android:layout_height="wrap_content"
             android:text="New Game"
             android:id="@+id/newGameButton"
+            android:onClick="newGame"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:onClick="newGame"/>
+            android:layout_alignLeft="@+id/player2Life"
+            android:layout_alignStart="@+id/player2Life" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dice"
+            android:id="@+id/diceButton"
+            android:layout_toEndOf="@+id/buttonMinusOne"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/buttonMinusOne"
+            android:layout_marginLeft="19dp"
+            android:onClick="rollDiceAndDisplayResult"/>
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Coin"
+            android:id="@+id/coinButton"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/buttonMinusOne"
+            android:layout_alignStart="@+id/buttonMinusOne"
+            android:onClick="flipCoinAndDisplayResult"/>
     </RelativeLayout>
 
 </LinearLayout>
