@@ -132,15 +132,4 @@ public class MainView extends Activity {
         updateLifeTextView(R.id.player2Life);
     }
 
-    /**
-     * Disables the phones ability to switch orientation to landscape.
-     *
-     * @param newConfig
-     */
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-    }
-
 }
