@@ -59,7 +59,8 @@
             android:layout_marginLeft="94dp"
             android:layout_alignTop="@+id/player1Life"
             android:layout_toRightOf="@+id/buttonAdd1"
-            android:layout_alignBottom="@+id/player1Life" />
+            android:layout_alignBottom="@+id/player1Life"
+            android:rotation="180" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -100,15 +101,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/diceButton"
-            android:layout_toEndOf="@+id/buttonMinusOne"
-            android:layout_alignParentBottom="true"
-            android:layout_toRightOf="@+id/buttonMinusOne"
-            android:layout_marginLeft="19dp"
             android:onClick="rollDiceAndDisplayResult"
             android:background="@drawable/dice"
-            android:layout_alignTop="@+id/newGameButton"
-            android:layout_toLeftOf="@+id/newGameButton"
-            android:layout_toStartOf="@+id/newGameButton" />
+            android:layout_toRightOf="@+id/buttonMinusOne"
+            android:layout_toStartOf="@+id/newGameButton"
+            android:layout_alignTop="@+id/coinButton" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -117,13 +114,12 @@
             android:id="@+id/coinButton"
             android:onClick="flipCoinAndDisplayResult"
             android:background="@drawable/coin"
-            android:layout_toEndOf="@+id/player1Life"
             android:layout_alignParentBottom="true"
             android:layout_alignLeft="@+id/buttonMinusOne"
             android:layout_alignStart="@+id/buttonMinusOne"
-            android:layout_alignTop="@+id/diceButton"
             android:layout_toLeftOf="@+id/diceButton"
-            android:layout_toStartOf="@+id/diceButton" />
+            android:layout_toStartOf="@+id/diceButton"
+            android:layout_alignTop="@+id/newGameButton" />
     </RelativeLayout>
 
 </LinearLayout>
